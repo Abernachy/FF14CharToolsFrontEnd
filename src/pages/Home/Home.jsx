@@ -19,8 +19,8 @@ function Home() {
         {charState.characterLoaded ? 
           <Switch>
             <charContext.Provider value={charState}>
-            <Route path="/character" component={CharTools}/>
-            <Redirect to="/character" />
+            <Route path="/main/character" component={CharTools}/>
+            <Redirect to="/main/character" />
             </charContext.Provider>
           </Switch>
             :

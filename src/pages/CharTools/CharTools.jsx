@@ -7,11 +7,12 @@ import NavBar from '../../components/charTools/NavBar'
 
 
 function CharTools() {
-  
+  const {Character} = useContext(charContext)
+
     
   return (
     <div>
-      <p>Character Tools Page</p>
+      <p>{Character.Name}</p>
       <NavBar />
       
       <p>Footer</p>

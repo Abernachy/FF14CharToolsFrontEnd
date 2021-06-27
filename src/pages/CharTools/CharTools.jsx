@@ -13,7 +13,8 @@ function CharTools() {
     <div>
       <p>Character Tools Page</p>
       <NavBar />
-    
+      
+      <p>Footer</p>
     
     {
       /* This is the main char Tools page which will have our NavBar for the for the components and everything else

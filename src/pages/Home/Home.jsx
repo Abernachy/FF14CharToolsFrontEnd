@@ -8,6 +8,7 @@ import charContext from '../../context/charContext'
 
 
 
+
 function Home() {
 
   const [charState,setChar] = useState(initialState)
@@ -19,8 +20,8 @@ function Home() {
         {charState.characterLoaded ? 
           <Switch>
             <charContext.Provider value={charState}>
-            <Route path="/main/character" component={CharTools}/>
-            <Redirect to="/main/character" />
+            <Route path="/main" component={CharTools}/>
+            <Redirect to="/main" />
             </charContext.Provider>
           </Switch>
             :

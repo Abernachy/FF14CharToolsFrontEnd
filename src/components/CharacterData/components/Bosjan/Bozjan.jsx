@@ -2,8 +2,7 @@ import React, {useContext} from 'react'
 import CardContent from '@material-ui/core/CardContent';
 import Card from '@material-ui/core/Card';
 import {makeStyles} from '@material-ui/core/styles'
-import Typography from '@material-ui/core/Typography';
-import charContext from '../../../../context/charContext'
+import {Typography, Paper} from '@material-ui/core';
 
 
 
@@ -16,21 +15,19 @@ const useStyles = makeStyles({
   },
 });
 
-const EurekaCard = (Eureka) => {
+const BozjanCard = (Bozjan) => {
   const classes = useStyles()
-  
-  const {Level, ExpLevelTogo,Name} = Eureka
+  const {Level, Mettle, } = Bozjan
   
   return (
     <Card className={classes.root}>
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Eureka Stats
+            Bozjan Stats
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             Level: {Level}
-            Exp To Go: {ExpLevelTogo}
-            Name: {Name}
+            Mettle: {Mettle}
             <div>
               
             </div>
@@ -41,4 +38,4 @@ const EurekaCard = (Eureka) => {
   )
 }
 
-export default EurekaCard
+export default BozjanCard

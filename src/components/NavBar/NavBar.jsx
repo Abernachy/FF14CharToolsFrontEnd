@@ -6,8 +6,10 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import CharacterData from '../../CharacterData/CharacterData'
+import CharacterData from '../CharacterData/CharacterData'
+import MountData from '../MountData/MountData'
 import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom'
+
 
 
 function TabPanel(props) {
@@ -82,7 +84,8 @@ export default function SimpleTabs() {
         <Redirect to="/main/character" />
       </TabPanel>
       <TabPanel value={value} index={1}>
-         <p>Mounts</p>
+      <Route path="/main/mounts" component={MountData}/>
+        <Redirect to="/main/mounts" />
       </TabPanel>
       <TabPanel value={value} index={2}>
         Item Three

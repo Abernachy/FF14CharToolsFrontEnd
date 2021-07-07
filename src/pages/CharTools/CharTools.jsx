@@ -1,17 +1,17 @@
 import React, {useContext} from 'react'
 import charContext from '../../context/charContext'
-import {BrowserRouter as router, Switch, Route, Link} from 'react-router-dom'
-import Tabs from '@material-ui/core/Tabs'
-import Tab from '@material-ui/core/Tab'
-import NavBar from '../../components/charTools/NavBar'
+
+import NavBar from '../../components/NavBar'
+import NameCard from '../../components/NameCard'
 
 
 function CharTools() {
   
+
     
   return (
     <div>
-      <p>Character Tools Page</p>
+      <NameCard />
       <NavBar />
       
       <p>Footer</p>

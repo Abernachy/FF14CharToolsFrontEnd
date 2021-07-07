@@ -6,9 +6,10 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import charContext from '../../../context/charContext'
-import characterData from '../characterData'
+import CharacterData from '../CharacterData/CharacterData'
+import MountData from '../MountData/MountData'
 import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom'
+
 
 
 function TabPanel(props) {
@@ -52,6 +53,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SimpleTabs() {
+
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -74,23 +76,22 @@ export default function SimpleTabs() {
           <Tab label="Achievements" {...a11yProps(3)} />
         </Tabs>
       </AppBar>
-      <charContext.Provider value={charContext}/>
       <Router>
-        <Switch>
+        
 
       <TabPanel value={value} index={0}>
-        <Route path="/main/character" component={characterData}/>
+        <Route path="/main/character" component={CharacterData}/>
         <Redirect to="/main/character" />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <characterData value={characterData.Character}/> 
+      <Route path="/main/mounts" component={MountData}/>
+        <Redirect to="/main/mounts" />
       </TabPanel>
       <TabPanel value={value} index={2}>
         Item Three
       </TabPanel>
-        </Switch>
       </Router>
-      <charContext.Provider />
+    
     </div>
   );
 }

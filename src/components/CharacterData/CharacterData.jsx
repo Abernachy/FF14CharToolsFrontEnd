@@ -6,21 +6,32 @@ import EurekaCard from './components/Eureka'
 import {makeStyles} from '@material-ui/core/styles'
 import { Paper, Typography} from '@material-ui/core'
 
-const useStyles = makeStyles((theme) => ({
-  root: {
+const useStyles = makeStyles(() => ({
+  root  : {
     display: 'grid',
-    gridTemplateColumns:10,
-    gridTemplateRows:6
-
-
-
+    gridTemplateColumns: 'repeat (6 )',
+    girdTemplateRows: 'repeat(8   )'
+    
+    
   },
   jobs:{
-    gridColumn:0/2,
-    gridRow:0/6
+    width: '100%',
+    backgroundColor: '#42f5dd',
+    width:'100%',
+    gridColumn: '1/2',
+    gridRow: '1/8'
+    
+
+  },
+  portrait: {
+    gridColumn: '3/4',
+    gridRow: '1/8'
 
   },
   relicJobs:{
+    width: '100%',
+    gridColumn: '5/6',
+    gridRow:'1/8'
 
   }
 
@@ -34,7 +45,7 @@ function CharacterData() {
   const classes = useStyles()
 
   return (
-    < Paper elevation ={2} >
+    < Paper elevation ={2}  >
       <Typography
         align='center'
         gutterBottom
@@ -43,20 +54,22 @@ function CharacterData() {
           Character Details
       </Typography >
 
-    <div>
-      <div>
-        <img src={Portrait}
-             align="center"
-             />
-      </div>
-      <div >
-      < Jobs />
-      </div>
-      <div>
-      < BozjanCard {...ClassJobsBozjan}/>
-      < EurekaCard {...ClassJobsElemental}/>
-    </div>
-        </div> 
+      <div  className={classes.root}>
+        <div className={classes.jobs} >
+          < Jobs />
+        </div>
+        <div className={classes.portrait}>
+          <img src={Portrait}
+              align="center"
+              alt='Character Picture'
+              />
+        </div>
+        
+        <div className={classes.relicJobs}>
+          < BozjanCard {...ClassJobsBozjan}/>
+          < EurekaCard {...ClassJobsElemental}/>
+        </div>
+      </div> 
     </Paper>
   )
 }
